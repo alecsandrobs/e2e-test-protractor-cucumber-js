@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "PageObjects": false
+  },
+  "extends": ["standard"],
+  "rules": {
+    "no-console": "off",
+    "no-debugger": "off",
+    "max-len": ["error", { "code": 150 }]
+  }
+}

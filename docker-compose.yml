@@ -1,0 +1,225 @@
+version: "2"
+
+services:
+  progrid:
+    image: selenium/hub:latest
+    container_name: progrid
+    privileged: true
+    ports:
+      - 4444:4444
+    environment:
+      - TZ=America/Sao_Paulo
+      - GRID_TIMEOUT=240000
+      - GRID_BROWSER_TIMEOUT=240000
+    networks:
+      - progrid_grid_internal
+
+  chrome01:
+    image: selenium/node-chrome:latest
+    privileged: true
+    depends_on:
+      - progrid
+    ports:
+      - 5001
+    environment:
+      - TZ=America/Sao_Paulo
+      - HUB_PORT_4444_TCP_ADDR=progrid
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SCREEN_WIDTH=1440
+      - SCREEN_HEIGHT=900
+    networks:
+      - progrid_grid_internal
+
+  chrome02:
+    image: selenium/node-chrome:latest
+    privileged: true
+    depends_on:
+      - progrid
+    ports:
+      - 5002
+    environment:
+      - TZ=America/Sao_Paulo
+      - HUB_PORT_4444_TCP_ADDR=progrid
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SCREEN_WIDTH=1440
+      - SCREEN_HEIGHT=900
+    networks:
+      - progrid_grid_internal
+
+  chrome03:
+    image: selenium/node-chrome:latest
+    privileged: true
+    depends_on:
+      - progrid
+    ports:
+      - 5003
+    environment:
+      - TZ=America/Sao_Paulo
+      - HUB_PORT_4444_TCP_ADDR=progrid
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SCREEN_WIDTH=1440
+      - SCREEN_HEIGHT=900
+    networks:
+      - progrid_grid_internal
+
+  chrome04:
+    image: selenium/node-chrome:latest
+    privileged: true
+    depends_on:
+      - progrid
+    ports:
+      - 5004
+    environment:
+      - TZ=America/Sao_Paulo
+      - HUB_PORT_4444_TCP_ADDR=progrid
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SCREEN_WIDTH=1440
+      - SCREEN_HEIGHT=900
+    networks:
+      - progrid_grid_internal
+
+  chrome05:
+    image: selenium/node-chrome:latest
+    privileged: true
+    depends_on:
+      - progrid
+    ports:
+      - 5005
+    environment:
+      - TZ=America/Sao_Paulo
+      - HUB_PORT_4444_TCP_ADDR=progrid
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SCREEN_WIDTH=1440
+      - SCREEN_HEIGHT=900
+    networks:
+      - progrid_grid_internal
+
+  chrome06:
+    image: selenium/node-chrome:latest
+    privileged: true
+    depends_on:
+      - progrid
+    ports:
+      - 5006
+    environment:
+      - TZ=America/Sao_Paulo
+      - HUB_PORT_4444_TCP_ADDR=progrid
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SCREEN_WIDTH=1440
+      - SCREEN_HEIGHT=900
+    networks:
+      - progrid_grid_internal
+
+  chrome07:
+    image: selenium/node-chrome:latest
+    privileged: true
+    depends_on:
+      - progrid
+    ports:
+      - 5007
+    environment:
+      - TZ=America/Sao_Paulo
+      - HUB_PORT_4444_TCP_ADDR=progrid
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SCREEN_WIDTH=1440
+      - SCREEN_HEIGHT=900
+    networks:
+      - progrid_grid_internal
+
+  chrome08:
+    image: selenium/node-chrome:latest
+    privileged: true
+    depends_on:
+      - progrid
+    ports:
+      - 5008
+    environment:
+      - TZ=America/Sao_Paulo
+      - HUB_PORT_4444_TCP_ADDR=progrid
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SCREEN_WIDTH=1440
+      - SCREEN_HEIGHT=900
+    networks:
+      - progrid_grid_internal
+
+  chrome09:
+    image: selenium/node-chrome:latest
+    privileged: true
+    depends_on:
+      - progrid
+    ports:
+      - 5009
+    environment:
+      - TZ=America/Sao_Paulo
+      - HUB_PORT_4444_TCP_ADDR=progrid
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SCREEN_WIDTH=1440
+      - SCREEN_HEIGHT=900
+    networks:
+      - progrid_grid_internal
+
+  chrome10:
+    image: selenium/node-chrome:latest
+    privileged: true
+    depends_on:
+      - progrid
+    ports:
+      - 5010
+    environment:
+      - TZ=America/Sao_Paulo
+      - HUB_PORT_4444_TCP_ADDR=progrid
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SCREEN_WIDTH=1440
+      - SCREEN_HEIGHT=900
+    networks:
+      - progrid_grid_internal
+
+  chrome11:
+    image: selenium/node-chrome:latest
+    privileged: true
+    depends_on:
+      - progrid
+    ports:
+      - 5011
+    environment:
+      - TZ=America/Sao_Paulo
+      - HUB_PORT_4444_TCP_ADDR=progrid
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SCREEN_WIDTH=1440
+      - SCREEN_HEIGHT=900
+    networks:
+      - progrid_grid_internal
+
+  firefox01:
+    image: selenium/node-firefox:latest
+    privileged: true
+    depends_on:
+      - progrid
+    ports:
+      - 6001
+    environment:
+      - TZ=America/Sao_Paulo
+      - HUB_PORT_4444_TCP_ADDR=progrid
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SCREEN_WIDTH=1440
+      - SCREEN_HEIGHT=900
+    networks:
+      - progrid_grid_internal
+
+  firefox02:
+    image: selenium/node-firefox:latest
+    privileged: true
+    depends_on:
+      - progrid
+    ports:
+      - 6002
+    environment:
+      - TZ=America/Sao_Paulo
+      - HUB_PORT_4444_TCP_ADDR=progrid
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SCREEN_WIDTH=1440
+      - SCREEN_HEIGHT=900
+    networks:
+      - progrid_grid_internal
+
+networks: progrid_grid_internal:
